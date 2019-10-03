@@ -1,0 +1,28 @@
+DECLARE Str1 : STRING
+DECLARE Str2 : STRING
+DECLARE Str3 : STRING
+DECLARE firstWord : STRING
+DECLARE lastWord : STRING
+DECLARE Sp : INTEGER
+
+Str1 = ""
+Str2 = ""
+Str3 = ""
+firstWord = ""
+lastWord = ""
+Sp = 0
+
+OUTPUT "Enter 1st string of 3 words: "
+INPUT Str1
+
+OUTPUT "Enter 2st string of 3 words: "
+INPUT Str2
+
+Sp = LOCATE (Str1,'')
+firstWord = RIGHT (Str1 , Sp-2)
+
+Sp =LOCATE (Str2,'')
+lastWord = LEFT (Str2 , Sp-1)
+
+Str3 = firstWord & '' & lastWord
+OUTPUT Str3
