@@ -1,0 +1,28 @@
+DECLARE Str 1 : STRING
+DECLARE Pangram : BOOEAN 
+DECLARE Counter : INTEGER
+
+Str 1 : ""
+Pangram : FALSE 
+Counter : 0
+
+IS Pangram = #FALSE#
+IF LENGTH(Str1) >= 26
+    THEN
+    IS Pangram : #TRUE#
+    Str 1 = LOWER (Str 1)
+    IF Counter = 65 TO 95 
+       NEXT Alphabet = CHR (Counter)
+         IF LOCATE (Str 1 , NEXT Alphabet)=0 
+            THEN
+             IS Pangram = #FALSE#
+               EXIT FOR 
+              END IF
+          END FOR
+END IF 
+  IF IS Pangram = #TRUE#
+      THEN 
+       OUTPUT "SENTENCE IS PANGRAM"
+      ELSE 
+       OUTPUT "SENTENCE IS NOT PANGRAM"
+  ENDIF
